@@ -1,0 +1,11 @@
+<h1>Pending Orders</h1>
+
+<ul>
+{{#each order}}
+<div id = {{this._id}}>{{this.ingredients}}: ${{this.price}}
+  <form class = "completeOrderForm" id = {{this._id}}>
+    <input type = "submit" value = "Completed">
+  </form>
+</div>
+{{/each}}
+</ul>
