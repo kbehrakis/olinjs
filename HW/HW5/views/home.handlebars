@@ -1,0 +1,49 @@
+<h1>Twitter</h1>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+
+
+<div id="log-in">
+	<input type="submit" name="login" value="Logout"/>
+</div>
+
+
+
+<div class = "new-tweet-css", id="new-tweet">
+	<h3>New Tweet</h3>
+	<form class = "new-tweet-form-css", id="new-tweet-form" method = "POST">
+  		<input type="text" name="content"/><br/>
+  		<input type="submit" value="Post Tweet"><br />
+	</form>
+</div>
+
+
+
+<div class = "show-tweets-css", id="show-tweets">
+	<h3>Tweets</h3>
+	<ul id = "current-tweets">
+	  {{#each tweets}}
+	  	<li id="{{this._id}}">
+			<div class="tweet-content">{{this.content}}</div>
+			<div class="tweet-username">{{this.username}}</div>
+			<input type="checkbox" name ="delete-tweet" onclick="onDeleteTweet()">
+		</li>
+	  {{/each}}
+	</ul>
+</div>
+
+
+
+<div class = "user-bar-css" id="user-bar">
+	<h3>Users</h3>
+	<ul class = ".user", id = "users">
+	  {{#each users}}
+	  	<li class = ".user", id="user-model">
+			<div class="user">{{this.username}}</div>
+		</li>
+	  {{/each}}
+	</ul>
+</div>
+
+
+
