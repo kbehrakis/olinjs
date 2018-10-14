@@ -1,9 +1,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var Tweet = new Schema({
-	text: String,
-	creator: {type: Schema.Types.ObjectId, ref: 'User'}
+var todo = new Schema({
+	task: String,
+	time: Number
+	status: String
 });
 
-module.exports = mongoose.model('Tweet', Tweet);
+module.exports = mongoose.model('TodoList', todo);
